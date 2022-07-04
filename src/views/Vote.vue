@@ -1,6 +1,6 @@
 <template>
   <div id="vote" class="flex flex-col items-center">
-    <div id="header" class="sticky top-0 w-full flex items-center justify-between p-8">
+    <div id="header" class="md:sticky md:top-0 w-full flex flex-col md:flex-row items-center justify-between gap-4 p-8">
       <img src="../assets/unihack_logo.png" class="h-12 object-contain" />
       <div class="flex items-center gap-8">
         <div class="gradient_border h-16 w-16 rounded-2xl p-0.5">
@@ -9,12 +9,12 @@
         <div class="gradient_border h-16 rounded-2xl p-0.5">
           <button class="button_sign_out h-15 w-max flex items-center gap-4 rounded-2xl object-cover px-8">
             <i class="fa-solid fa-arrow-right-from-bracket"></i>
-            <span>Sign out</span>
+            <span class="hidden md:block">Sign out</span>
           </button>
         </div>
       </div>
     </div>
-    <div class="w-full flex items-center justify-center flex-wrap gap-16 p-16 pb-48">
+    <div class="w-full flex items-center justify-center flex-wrap gap-8 md:gap-16 p-8 md:p-16 pb-24 md:pb-48">
       <Card />
       <Card />
       <Card />
