@@ -34,6 +34,8 @@ const authStore = {
           commit('setAuthenticated', true)
           commit('setUser', user)
           commit('setToken', token)
+          localStorage.setItem('token', token)
+          localStorage.setItem('user', JSON.stringify(user))
           router.push('/')
         })
         .catch(error => {
