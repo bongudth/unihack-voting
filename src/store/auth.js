@@ -12,6 +12,15 @@ const authStore = {
     token: null
   },
   mutations: {
+    initialiseStore(state) {
+      if (localStorage.getItem('token')) {
+        state.token = localStorage.getItem('token')
+        state.isAuthenticated = true
+      }
+      if (localStorage.getItem('user')) {
+        state.user = JSON.parse(localStorage.getItem('user'))
+      }
+    },
     setAuthenticated(state, isAuthenticated) {
       state.isAuthenticated = isAuthenticated
     },

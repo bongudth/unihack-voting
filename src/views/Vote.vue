@@ -4,7 +4,7 @@
       <img src="../assets/unihack_logo.png" class="h-16 object-contain" />
       <div class="flex items-center gap-8">
         <div class="gradient_border rounded-2xl p-0.5">
-          <img src="../assets/ava.jpg" class="h-15 w-15 rounded-2xl object-cover" />
+          <img :src="user.photoURL" class="h-15 w-15 rounded-2xl object-cover" />
         </div>
         <div class="gradient_border rounded-2xl p-0.5">
           <button class="button_sign_out h-15 w-max flex items-center gap-4 rounded-2xl object-cover px-8">
@@ -38,6 +38,12 @@ export default {
   name: 'Vote',
   components: {
     Card
+  },
+  computed: {
+    user() {
+      console.log(this)
+      return this.$store.state.authStore.user
+    }
   },
   mounted() {
     window.addEventListener('scroll', () => {
