@@ -1,12 +1,12 @@
 <template>
   <div id="vote" class="flex flex-col items-center">
     <div id="header" class="md:sticky md:top-0 w-full flex flex-col md:flex-row items-center justify-between gap-4 p-8">
-      <img src="../assets/unihack_logo.png" class="h-12 object-contain" />
+      <img src="../assets/unihack_logo.png" class="h-16 object-contain" />
       <div class="flex items-center gap-8">
-        <div class="gradient_border h-16 w-16 rounded-2xl p-0.5">
+        <div class="gradient_border rounded-2xl p-0.5">
           <img src="../assets/ava.jpg" class="h-15 w-15 rounded-2xl object-cover" />
         </div>
-        <div class="gradient_border h-16 rounded-2xl p-0.5">
+        <div class="gradient_border rounded-2xl p-0.5">
           <button class="button_sign_out h-15 w-max flex items-center gap-4 rounded-2xl object-cover px-8">
             <i class="fa-solid fa-arrow-right-from-bracket"></i>
             <span class="hidden md:block">Sign out</span>
