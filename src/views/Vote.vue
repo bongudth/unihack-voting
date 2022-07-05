@@ -6,7 +6,7 @@
         <div class="gradient_border rounded-2xl p-0.5">
           <img :src="user.photoURL" class="h-15 w-15 rounded-2xl object-cover" />
         </div>
-        <div class="gradient_border rounded-2xl p-0.5">
+        <div @click="googleSignOut" class="gradient_border rounded-2xl p-0.5">
           <button class="button_sign_out h-15 w-max flex items-center gap-4 rounded-2xl object-cover px-8">
             <i class="fa-solid fa-arrow-right-from-bracket"></i>
             <span class="hidden md:block">Sign out</span>
@@ -90,6 +90,9 @@ export default {
     })
   },
   methods: {
+    googleSignOut() {
+      this.$store.dispatch('googleSignOut')
+    },
     vote(id) {
       this.$store.dispatch('vote', id)
     }
