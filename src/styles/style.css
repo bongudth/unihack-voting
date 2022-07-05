@@ -21,13 +21,15 @@
     --background-gradient-dark: linear-gradient(to bottom, var(--background-purple-dark), var(--background-purple-light));
     
     --border-radius: 2rem;
-    --padding: 2rem;
+    --padding: 1rem;
 
     --transition: all 0.3s ease-in-out;
 }
 
 .el-dialog {
     background: transparent !important;
+    width: 80% !important;
+    max-width: 1000px;
 }
 
 .el-dialog__header {
@@ -43,6 +45,7 @@
 }
 
 .el-message-box {
+    width: auto !important;
     background-color: var(--background-dark) !important;
     border: none !important;
     border-radius: var(--border-radius) !important;
