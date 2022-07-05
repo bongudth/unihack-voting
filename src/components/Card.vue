@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="card md:w-200 flex flex-col md:flex-row items-center md:items-start gap-4 rounded-4xl p-4">
+    <div class="card md:w-200 flex flex-col md:flex-row items-center md:items-start gap-2 sm:gap-4 border-1 md:border-0 rounded-4xl p-2 sm:p-4">
       <div class="background_dark rounded-4xl p-3">
         <img
           @click="dialogVisible=true"
@@ -13,7 +13,11 @@
         <div @click="dialogVisible=true" class="desc cursor-pointer">
           {{ desc }}
         </div>
-        <div class="background_dark rounded-2xl p-0.5">
+        <div v-if="votedTeamId && votedTeamId === card.id" class="button_voted h-15 w-max flex items-center gap-4 rounded-2xl object-cover px-8">
+          <i class="fa-solid fa-heart"></i>
+          <span>Voted</span>
+        </div>
+        <div v-if="!votedTeamId" class="background_dark border-1 md:border-0 rounded-2xl p-0.5">
           <button @click="confirmVote" class="button_vote h-15 w-max flex items-center gap-4 rounded-2xl object-cover px-8">
             <i class="fa-regular fa-heart"></i>
             <span>Up vote</span>
@@ -25,7 +29,7 @@
     <el-dialog
       :visible.sync="dialogVisible"
     >
-      <Modal :card="card" />
+      <Modal :card="card" @vote="emitVote" />
     </el-dialog>
   </div>
 </template>
@@ -46,6 +50,9 @@ export default {
     }
   },
   computed: {
+    votedTeamId() {
+      return this.$store.state.authStore.vote
+    },
     desc() {
       if (this.card.desc.length > 200) {
         return this.card.desc.substring(0, 200) + '...'
@@ -60,12 +67,15 @@ export default {
     }
   },
   methods: {
+    emitVote() {
+      this.$emit('vote', this.card.id)
+    },
     confirmVote() {
       this.$confirm('Are you sure to vote for ' + this.card.name + ' You cannot undo after voting.', 'Confirm vote', {
         confirmButtonText: 'Vote',
         cancelButtonText: 'Cancel'
       }).then(() => {
-        this.$emit('vote', this.card.id)
+        this.emitVote()
       }).catch(() => {
         this.$message({
           type: 'info',
@@ -100,6 +110,10 @@ export default {
 
 .desc {
   color: var(--text-mid);
+}
+
+.button_voted {
+  background-image: var(--background-gradient-light);
 }
 
 .button_vote > i,

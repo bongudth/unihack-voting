@@ -12,7 +12,11 @@
         <div class="desc">
           {{ card.desc }}
         </div>
-        <button @click="confirmVote" class="button_vote h-12 md:h-15 w-max flex items-center gap-4 rounded-2xl object-cover px-8">
+        <div v-if="votedTeamId && votedTeamId === card.id" class="button_voted h-15 w-max flex items-center gap-4 rounded-2xl object-cover px-8">
+          <i class="fa-solid fa-heart"></i>
+          <span>Voted</span>
+        </div>
+        <button v-if="!votedTeamId" @click="confirmVote" class="button_vote h-12 md:h-15 w-max flex items-center gap-4 rounded-2xl object-cover px-8">
           <i class="fa-regular fa-heart"></i>
           <span>Up vote</span>
         </button>
@@ -35,6 +39,11 @@ export default {
     card: {
       type: Object,
       required: true
+    }
+  },
+  computed: {
+    votedTeamId() {
+      return this.$store.state.authStore.vote
     }
   },
   data() {
@@ -77,12 +86,15 @@ export default {
 
 .desc {
   color: var(--text-mid);
+  font-size: var(--text-size);
 }
 
-.button_vote {
+.button_vote,
+.button_voted {
   background-image: var(--background-gradient-light);
   color: var(--text-light);
   box-shadow: var(--box-shadow-dark);
+  font-size: var(--text-size);
 }
 
 .button_vote > i,

@@ -14,7 +14,7 @@
         </div>
       </div>
     </div>
-    <div class="w-full flex items-center justify-center flex-wrap gap-8 md:gap-16 p-8 md:p-16 pb-24 md:pb-48">
+    <div class="w-full flex items-center justify-center flex-wrap gap-8 md:gap-16 p-4 sm:p-8 md:p-16 pb-24 md:pb-48">
       <Card v-for="card in cards" :key="card.id" :card="card" @vote="vote" />
     </div>
   </div>

@@ -3,7 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import 'windi.css'
-import * as firebase from 'firebase/app'
+import { initializeApp } from 'firebase/app'
 import './styles/style.css'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
@@ -21,7 +21,7 @@ const firebaseConfig = {
   appId: '1:966295184355:web:5ffc8f79edec6a8944f6d6'
 }
 
-firebase.initializeApp(firebaseConfig)
+initializeApp(firebaseConfig)
 
 new Vue({
   router,

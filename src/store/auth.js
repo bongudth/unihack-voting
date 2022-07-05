@@ -66,6 +66,9 @@ const authStore = {
         .catch(error => {
           console.log(error)
         })
+    },
+    vote({ commit }, payload) {
+      console.log(payload)
     }
   }
 }
