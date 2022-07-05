@@ -1,0 +1,15 @@
+.el-dialog {
+    background: transparent !important;
+}
+
+.el-dialog__header {
+    display: none;
+}
+
+.el-dialog__body {
+    background-image: url("../assets/unihack_background.png");
+    background-size: cover;
+    background-position: center;
+    box-shadow: #16134A 0px 7px 29px 0px;
+    border-radius: 2rem;
+}

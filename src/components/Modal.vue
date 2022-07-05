@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="modal flex flex-col 2xl:flex-row items-center gap-4 rounded-4xl p-16">
+    <div class="flex flex-col 2xl:flex-row items-center gap-4 rounded-4xl p-8">
       <div class="background_dark flex flex-col items-center rounded-4xl p-2 md:p-4 gap-4 md:gap-8">
         <img
           :src="card.image"
@@ -46,18 +46,6 @@ export default {
 </script>
 
 <style scoped>
-.modal {
-  background-image: url("../assets/unihack_background.png");
-  background-size: cover;
-  background-position: center;
-  box-shadow: #16134A 0px 7px 29px 0px;
-  transition: all 0.3s ease-in-out;
-}
-
-.modal:hover {
-  box-shadow: #1C1654 0px 7px 29px 0px;
-}
-
 .background_dark {
   background-color: #16134A;
   box-shadow: #1C1654 0px 7px 29px 0px;
