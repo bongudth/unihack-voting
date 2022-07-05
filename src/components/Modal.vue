@@ -43,7 +43,7 @@ export default {
   },
   computed: {
     votedTeamId() {
-      return this.$store.state.authStore.vote
+      return this.$store.state.votedTeamId
     }
   },
   data() {

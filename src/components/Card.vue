@@ -49,9 +49,16 @@ export default {
       required: true
     }
   },
+  async created() {
+    if (this.$store.state.votedTeamId) {
+      this.votedTeamId = this.$store.state.votedTeamId
+    } else {
+      await this.$store.dispatch('getVote')
+    }
+  },
   computed: {
     votedTeamId() {
-      return this.$store.state.authStore.vote
+      return this.$store.state.votedTeamId
     },
     desc() {
       if (this.card.desc.length > 200) {
