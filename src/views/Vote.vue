@@ -15,7 +15,7 @@
       </div>
     </div>
     <div class="w-full flex items-center justify-center flex-wrap gap-8 md:gap-16 p-8 md:p-16 pb-24 md:pb-48">
-      <Card v-for="card in cards" :key="card.id" :card="card" @vote-team="voteTeam" />
+      <Card v-for="card in cards" :key="card.id" :card="card" @vote="vote" />
     </div>
   </div>
 </template>
@@ -90,7 +90,7 @@ export default {
     })
   },
   methods: {
-    voteTeam(id) {
+    vote(id) {
       this.$store.dispatch('vote', id)
     }
   }
@@ -99,27 +99,23 @@ export default {
 
 <style scoped>
 #vote {
-  background-color: #16134A;
-  background-image: linear-gradient(to bottom, #16134A, #2C1855);
-  color: #F5F5F5;
+  background-color: var(--background-dark);
+  background-image: var(--background-gradient-dark);
+  color: var(--text-light);
 }
 
 .gradient_border {
-  background-image: linear-gradient(to right bottom, #C30AC7, #3F4FFD);
+  background-image: var(--background-gradient-light);
 }
 
 .button_sign_out {
-  background-color: #16134A;
-  transition: all 0.3s ease-in-out;
-}
-
-.button_sign_out:hover {
-  background-color: #1C1654;
+  background-color: var(--background-dark);
+  transition: var(--transition);
 }
 
 .button_sign_out > i,
 .button_sign_out > span {
-  transition: all 0.3s ease-in-out;
+  transition: var(--transition);
 }
 
 .button_sign_out:hover > i {

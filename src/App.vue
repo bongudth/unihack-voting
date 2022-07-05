@@ -15,9 +15,8 @@ body {
 }
 
 #app {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-family);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #200343;
 }
 </style>

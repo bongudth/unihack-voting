@@ -12,12 +12,18 @@
         <div class="desc">
           {{ card.desc }}
         </div>
-        <button @click="voteTeam" class="button_vote h-15 w-max flex items-center gap-4 rounded-2xl object-cover px-8">
+        <button @click="confirmVote" class="button_vote h-15 w-max flex items-center gap-4 rounded-2xl object-cover px-8">
           <i class="fa-regular fa-heart"></i>
           <span>Up vote</span>
         </button>
       </div>
     </div>
+
+    <el-dialog
+      :visible.sync="dialogVisible"
+    >
+      <Modal :card="card" />
+    </el-dialog>
   </div>
 </template>
 
@@ -37,8 +43,18 @@ export default {
     }
   },
   methods: {
-    voteTeam() {
-      this.$emit('vote-team', this.card.id)
+    confirmVote() {
+      this.$confirm('Are you sure to vote for ' + this.card.name + ' You cannot undo after voting.', 'Confirm vote', {
+        confirmButtonText: 'Vote',
+        cancelButtonText: 'Cancel'
+      }).then(() => {
+        this.$emit('vote', this.card.id)
+      }).catch(() => {
+        this.$message({
+          type: 'info',
+          message: 'Vote canceled'
+        })
+      })
     }
   }
 }
@@ -47,31 +63,31 @@ export default {
 
 <style scoped>
 .background_dark {
-  background-color: #16134A;
-  box-shadow: #1C1654 0px 7px 29px 0px;
+  background-color: var(--background-dark);
+  box-shadow: var(--box-shadow-dark);
 }
 
 .background_dark > img {
-  box-shadow: #1C1654 0px 7px 29px 0px;
+  box-shadow: var(--box-shadow-dark);
 }
 
 .team_name {
-  color: #F5F5F5;
+  color: var(--text-light);
 }
 
 .desc {
-  color: #E0DCEA;
+  color: var(--text-mid);
 }
 
 .button_vote {
-  background-image: linear-gradient(to right bottom, #C30AC7, #3F4FFD);
-  color: #F5F5F5;
-  box-shadow: #1C1654 0px 7px 29px 0px;
+  background-image: var(--background-gradient-light);
+  color: var(--text-light);
+  box-shadow: var(--box-shadow-dark);
 }
 
 .button_vote > i,
 .button_vote > span {
-  transition: all 0.3s ease-in-out;
+  transition: var(--transition);
 }
 
 .button_vote:hover > i {

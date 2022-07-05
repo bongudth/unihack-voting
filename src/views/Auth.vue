@@ -29,12 +29,12 @@ export default {
 
 .auth_button {
   background-color: transparent;
-  color: #F5F5F5;
-  border-color: #F5F5F5;
-  transition: all 0.3s ease-in-out;
+  color: var(--text-light);
+  border-color: var(--text-light);
+  transition: var(--transition);
 }
 
 .auth_button:hover {
-  background-color: #200343;
+  background-color: var(--background-dark);
 }
 </style>

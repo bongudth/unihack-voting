@@ -1,3 +1,31 @@
+:root {
+    --font-family: "Montserrat", sans-serif;
+
+    --text-size: 16px;
+    --title-size: 24px;
+
+    --text-light: #F5F5F5;
+    --text-mid: #E0DCEA;
+    --text-dark: #200343;
+
+    --background-pink: #C30AC7;
+    --background-blue: #3F4FFD;
+    --background-dark: #16134A;
+    --background-purple-dark: #1C1654;
+    --background-purple-light: #2C1855;
+
+    --box-shadow-dark: var(--background-dark) 0 7px 29px 0;
+    --box-shadow-darker: var(--background-purple-dark) 0 7px 29px 0;
+
+    --background-gradient-light: linear-gradient(to right bottom, var(--background-pink), var(--background-blue));
+    --background-gradient-dark: linear-gradient(to bottom, var(--background-purple-dark), var(--background-purple-light));
+    
+    --border-radius: 2rem;
+    --padding: 2rem;
+
+    --transition: all 0.3s ease-in-out;
+}
+
 .el-dialog {
     background: transparent !important;
 }
@@ -10,6 +38,42 @@
     background-image: url("../assets/unihack_background.png");
     background-size: cover;
     background-position: center;
-    box-shadow: #16134A 0px 7px 29px 0px;
-    border-radius: 2rem;
+    box-shadow: var(--box-shadow-dark);
+    border-radius: var(--border-radius);
+}
+
+.el-message-box {
+    background-color: var(--background-dark) !important;
+    border: none !important;
+    border-radius: var(--border-radius) !important;
+    box-shadow: var(--box-shadow-dark) !important;
+    padding: var(--padding);
+    padding-bottom: var(--padding) !important;
+}
+
+.el-message-box__title,
+.el-message-box__headerbtn .el-message-box__close {
+    color: var(--text-light) !important;
+    font-size: var(--title-size) !important;
+}
+
+.el-message-box__content {
+    color: var(--text-mid) !important;
+    font-size: var(--text-size) !important;
+}
+
+.el-button {
+    background: var(--background-dark) !important;
+    color: var(--text-light) !important;
+    border: 1px solid var(--text-light) !important; 
+}
+
+.el-button--primary {
+    background-image: var(--background-gradient-light) !important;
+    color: var(--text-light) !important;
+    border: none !important; 
+}
+
+.el-button--small {
+    font-size: var(--text-size) !important;
 }
