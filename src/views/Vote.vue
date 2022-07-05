@@ -78,6 +78,13 @@ export default {
       ]
     }
   },
+  created() {
+    const selectedCardId = this.$route.params.teamId
+    if (selectedCardId) {
+      this.selectedCard = this.cards.find(card => card.id.toString() === String(selectedCardId))
+      this.dialogVisible = true
+    }
+  },
   computed: {
     user() {
       return this.$store.state.authStore.user
@@ -98,8 +105,8 @@ export default {
   },
   methods: {
     setCard(card) {
-      this.dialogVisible = true
       this.selectedCard = card
+      this.dialogVisible = true
     },
     googleSignOut() {
       this.$store.dispatch('googleSignOut')

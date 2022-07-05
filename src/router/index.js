@@ -17,6 +17,14 @@ const routes = [
     }
   },
   {
+    path: '/team/:teamId',
+    name: 'Team',
+    component: Vote,
+    meta: {
+      middleware: { auth }
+    }
+  },
+  {
     path: '/',
     name: 'Vote',
     component: Vote,
