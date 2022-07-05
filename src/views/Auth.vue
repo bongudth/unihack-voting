@@ -29,8 +29,8 @@ export default {
 
 .auth_button {
   background-color: transparent;
-  color: #fdfdfd;
-  border-color: #fdfdfd;
+  color: #F5F5F5;
+  border-color: #F5F5F5;
   transition: all 0.3s ease-in-out;
 }
 
