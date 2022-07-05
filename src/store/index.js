@@ -12,6 +12,9 @@ export default new Vuex.Store({
   mutations: {
     setVotedTeamId(state, votedTeamId) {
       state.votedTeamId = votedTeamId
+    },
+    resetVotedTeamId(state) {
+      state.votedTeamId = null
     }
   },
   actions: {

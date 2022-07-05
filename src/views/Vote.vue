@@ -15,22 +15,29 @@
       </div>
     </div>
     <div class="w-full flex items-center justify-center flex-wrap gap-8 md:gap-16 p-4 sm:p-8 md:p-16 pb-24 md:pb-48">
-      <Card v-for="card in cards" :key="card.id" :card="card" @vote="vote" />
+      <Card v-for="card in cards" :key="card.id" :card="card" @open-modal="setCard" @vote="vote" />
     </div>
+    <el-dialog :visible.sync="dialogVisible">
+      <Modal :card="selectedCard" @vote="vote" />
+    </el-dialog>
   </div>
 </template>
 
 <script>
 
 import Card from '../components/Card.vue'
+import Modal from '../components/Modal.vue'
 
 export default {
   name: 'Vote',
   components: {
-    Card
+    Card,
+    Modal
   },
   data() {
     return {
+      dialogVisible: false,
+      selectedCard: null,
       cards: [
         {
           id: 1,
@@ -90,6 +97,10 @@ export default {
     })
   },
   methods: {
+    setCard(card) {
+      this.dialogVisible = true
+      this.selectedCard = card
+    },
     googleSignOut() {
       this.$store.dispatch('googleSignOut')
     },

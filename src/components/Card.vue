@@ -1,48 +1,35 @@
 <template>
-  <div>
-    <div class="card md:w-200 flex flex-col md:flex-row items-center md:items-start gap-2 sm:gap-4 border-1 md:border-0 rounded-4xl p-2 sm:p-4">
-      <div class="background_dark rounded-4xl p-3">
-        <img
-          @click="dialogVisible=true"
-          :src="card.image"
-          class="h-40 min-w-60 md:h-60 md:min-w-80 rounded-4xl object-cover cursor-pointer"
-        />
+  <div class="card md:w-200 flex flex-col md:flex-row items-center md:items-start gap-2 sm:gap-4 border-1 md:border-0 rounded-4xl p-2 sm:p-4">
+    <div class="background_dark rounded-4xl p-3">
+      <img
+        @click="openModal"
+        :src="card.image"
+        class="h-40 min-w-60 md:h-60 md:min-w-80 rounded-4xl object-cover cursor-pointer"
+      />
+    </div>
+    <div class="flex flex-col justify-center items-center md:items-start gap-4 p-3">
+      <div @click="openModal" class="text-3xl lg:text-4xl text-stroke-sm cursor-pointer">{{ card.name }}</div>
+      <div @click="openModal" class="desc cursor-pointer">
+        {{ desc }}
       </div>
-      <div class="flex flex-col justify-center items-center md:items-start gap-4 p-3">
-        <div @click="dialogVisible=true" class="text-3xl lg:text-4xl text-stroke-sm cursor-pointer">{{ card.name }}</div>
-        <div @click="dialogVisible=true" class="desc cursor-pointer">
-          {{ desc }}
-        </div>
-        <div v-if="votedTeamId && votedTeamId === card.id" class="button_voted h-15 w-max flex items-center gap-4 rounded-2xl object-cover px-8">
-          <i class="fa-solid fa-heart"></i>
-          <span>Voted</span>
-        </div>
-        <div v-if="!votedTeamId" class="background_dark border-1 md:border-0 rounded-2xl p-0.5">
-          <button @click="confirmVote" class="button_vote h-15 w-max flex items-center gap-4 rounded-2xl object-cover px-8">
-            <i class="fa-regular fa-heart"></i>
-            <span>Up vote</span>
-          </button>
-        </div>
+      <div v-if="votedTeamId && votedTeamId === card.id" class="button_voted h-15 w-max flex items-center gap-4 rounded-2xl object-cover px-8">
+        <i class="fa-solid fa-heart"></i>
+        <span>Voted</span>
+      </div>
+      <div v-if="!votedTeamId" class="background_dark border-1 md:border-0 rounded-2xl p-0.5">
+        <button @click="confirmVote" class="button_vote h-15 w-max flex items-center gap-4 rounded-2xl object-cover px-8">
+          <i class="fa-regular fa-heart"></i>
+          <span>Up vote</span>
+        </button>
       </div>
     </div>
-
-    <el-dialog
-      :visible.sync="dialogVisible"
-    >
-      <Modal :card="card" @vote="emitVote" />
-    </el-dialog>
   </div>
 </template>
 
 <script>
 
-import Modal from './Modal.vue'
-
 export default {
   name: 'Card',
-  components: {
-    Modal
-  },
   props: {
     card: {
       type: Object,
@@ -74,15 +61,15 @@ export default {
     }
   },
   methods: {
-    emitVote() {
-      this.$emit('vote', this.card.id)
+    openModal() {
+      this.$emit('open-modal', this.card)
     },
     confirmVote() {
       this.$confirm('Are you sure to vote for ' + this.card.name + ' You cannot undo after voting.', 'Confirm vote', {
         confirmButtonText: 'Vote',
         cancelButtonText: 'Cancel'
       }).then(() => {
-        this.emitVote()
+        this.$emit('vote', this.card.id)
       }).catch(() => {
         this.$message({
           type: 'info',

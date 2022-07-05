@@ -5,6 +5,7 @@ import {
   signOut
 } from 'firebase/auth'
 import router from '../router'
+import './index'
 
 const authStore = {
   state: {
@@ -59,6 +60,7 @@ const authStore = {
           commit('setAuthenticated', false)
           commit('setUser', {})
           commit('setToken', null)
+          commit('resetVotedTeamId')
           localStorage.removeItem('token')
           localStorage.removeItem('user')
           router.push({ name: 'Auth' })
