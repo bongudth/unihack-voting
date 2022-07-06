@@ -8,14 +8,17 @@
     --text-mid: #E0DCEA;
     --text-dark: #200343;
 
+    --shadow: #100D3F;
+    --shadow-darker: #0B0935;
+
     --background-pink: #C30AC7;
     --background-blue: #3F4FFD;
     --background-dark: #16134A;
     --background-purple-dark: #1C1654;
     --background-purple-light: #2C1855;
 
-    --box-shadow-dark: var(--background-dark) 0 7px 29px 0;
-    --box-shadow-darker: var(--background-purple-dark) 0 7px 29px 0;
+    --box-shadow-dark: var(--shadow) 0 7px 29px 0;
+    --box-shadow-darker: var(--shadow-darker) 0 7px 29px 0;
 
     --background-gradient-light: linear-gradient(to right bottom, var(--background-pink), var(--background-blue));
     --background-gradient-dark: linear-gradient(to bottom, var(--background-purple-dark), var(--background-purple-light));
@@ -63,6 +66,10 @@
 .el-message-box__content {
     color: var(--text-mid) !important;
     font-size: var(--text-size) !important;
+}
+
+.el-message-box__message > p > strong {
+    color: var(--background-pink);
 }
 
 .el-button {

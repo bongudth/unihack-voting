@@ -67,7 +67,8 @@ export default {
       this.$emit('open-modal', this.card)
     },
     confirmVote() {
-      this.$confirm('Are you sure to vote for ' + this.card.name + ' You cannot undo after voting.', 'Confirm vote', {
+      this.$confirm('Are you sure to vote for ' + this.card.name + ' <br /><strong>You cannot undo after voting.</strong>', 'Confirm vote', {
+        dangerouslyUseHTMLString: true,
         confirmButtonText: 'Vote',
         cancelButtonText: 'Cancel'
       }).then(() => {
