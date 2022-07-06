@@ -72,19 +72,13 @@ export default {
         cancelButtonText: 'Cancel'
       }).then(() => {
         this.$emit('vote', this.card.id)
+        launchConfetti()
       }).catch(() => {
         this.$message({
           type: 'info',
           message: 'Vote canceled'
         })
       })
-    }
-  },
-  watch: {
-    votedTeamId(teamId) {
-      if (teamId) {
-        launchConfetti()
-      }
     }
   }
 }
