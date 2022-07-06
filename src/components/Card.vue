@@ -28,6 +28,8 @@
 
 <script>
 
+import { launchConfetti } from '../utils/confetti'
+
 export default {
   name: 'Card',
   props: {
@@ -76,6 +78,13 @@ export default {
           message: 'Vote canceled'
         })
       })
+    }
+  },
+  watch: {
+    votedTeamId(teamId) {
+      if (teamId) {
+        launchConfetti()
+      }
     }
   }
 }
