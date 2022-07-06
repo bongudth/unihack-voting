@@ -40,7 +40,7 @@
 }
 
 .el-dialog__body {
-    background-image: url("../assets/unihack_background.png");
+    background-image: url("../assets/modal_background.png");
     background-size: cover;
     background-position: center;
     box-shadow: var(--box-shadow-dark);
