@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Vote from '../views/Vote.vue'
 import Auth from '../views/Auth.vue'
+import Vote from '../views/Vote.vue'
+import Result from '../views/Result.vue'
 import unAuth from '../middleware/unAuth'
 import auth from '../middleware/auth'
 
@@ -23,6 +24,11 @@ const routes = [
     meta: {
       middleware: { auth }
     }
+  },
+  {
+    path: '/result',
+    name: 'Result',
+    component: Result
   },
   {
     path: '/',

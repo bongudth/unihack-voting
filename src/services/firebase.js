@@ -31,4 +31,16 @@ function read(path, field) {
   })
 }
 
-export { write, read }
+function readAll(path) {
+  return new Promise((resolve, reject) => {
+    return get(ref(db, path)).then(snapshot => {
+      if (snapshot.exists()) {
+        resolve(snapshot.val())
+      } else {
+        reject(new Error('Not found'))
+      }
+    })
+  })
+}
+
+export { write, read, readAll }

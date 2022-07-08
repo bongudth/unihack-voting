@@ -87,3 +87,25 @@
 .el-button--small {
     font-size: var(--text-size) !important;
 }
+
+.el-table--border, .el-table--group {
+    border: 1px solid var(--text-light) !important;
+}
+
+.el-table {
+    width: auto !important;
+    flex: none !important;
+    max-width: auto !important;
+    color: var(--text-light) !important;
+    font-size: var(--text-size) !important;
+}
+
+.el-table,
+.el-table tr,
+.el-table th.el-table__cell {
+    background-color: transparent !important;
+}
+
+.el-table thead {
+    color: var(--text-light) !important;
+}
