@@ -26,7 +26,7 @@ const routes = [
     }
   },
   {
-    path: '/result',
+    path: '/k3t-qu4-bjnk-ck0n-d0j-tkj-unjk4ck-qdsc-dut',
     name: 'Result',
     component: Result
   },
