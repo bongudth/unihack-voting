@@ -47,9 +47,9 @@ const authStore = {
           commit('setToken', token)
           localStorage.setItem('token', token)
           localStorage.setItem('user', JSON.stringify(user))
-          const path = router?.currentRoute?.fullPath
-          if (path !== '/') {
-            router.push({ name: 'Team', params: { teamId: path?.split('%2F').pop() } })
+          const teamId = router?.currentRoute?.fullPath?.split('%2F').pop()
+          if (!isNaN(Number(teamId))) {
+            router.push({ name: 'Team', params: { teamId } })
           } else {
             router.push({ name: 'Vote' })
           }

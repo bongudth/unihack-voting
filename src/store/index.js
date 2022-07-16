@@ -10,39 +10,84 @@ export default new Vuex.Store({
     cards: [
       {
         id: 1,
-        name: 'What is Lorem Ipsum?',
-        desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-        image: 'https://picsum.photos/id/456/320/240'
+        name: 'E-Arena',
+        desc: 'E-Arena là nền tảng học tập, thi đấu trực tuyến đa người dùng, tương tác 2 chiều giữa người dạy và người học. Người tham gia có thể thi đấu để cùng trả lời các câu hỏi kiến thức thông qua hình thức trò chơi thú vị, hoặc cùng nhau tham các khóa học, rèn luyện cùng nhau. Lên lịch thi đấu, học tập phù hợp theo sở thích của mình.',
+        image: 'https://res.cloudinary.com/dz5pvwzm5/image/upload/v1657987060/UNIHACK/krmgldg2fnzhfudidk1i.jpg',
+        imageInfo: 'https://res.cloudinary.com/dz5pvwzm5/image/upload/v1657986376/UNIHACK/njc9idcupeasetdupkgv.png',
+        imageInfoMobile: 'https://res.cloudinary.com/dz5pvwzm5/image/upload/v1657989729/UNIHACK/c7iym1ie9mfb2igg2mlm.png'
       },
       {
         id: 2,
-        name: 'Why do we use it?',
-        desc: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).',
-        image: 'https://picsum.photos/id/322/320/240'
+        name: 'Green Go',
+        desc: 'Dự án Miniousm là nền tảng cung cấp môi trường học tập hiệu quả với công cụ đề xuất lộ trình học, kết nối bạn đồng hành và không gian học giành cho các bạn sinh viên gặp vấn đề trong tiếp thu và kiểm tra lại kiến thức tại trường đại học.',
+        image: 'https://res.cloudinary.com/dz5pvwzm5/image/upload/v1657987062/UNIHACK/umjqsjybx0pnga1fsqfb.jpg',
+        imageInfo: 'https://res.cloudinary.com/dz5pvwzm5/image/upload/v1657996260/UNIHACK/odebgduqva7mzc6g5tdb.png',
+        imageInfoMobile: 'https://res.cloudinary.com/dz5pvwzm5/image/upload/v1657989729/UNIHACK/c7iym1ie9mfb2igg2mlm.png'
       },
       {
         id: 3,
-        name: 'Where does it come from?',
-        desc: 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.',
-        image: 'https://picsum.photos/id/641/320/240'
+        name: 'Eduverse',
+        desc: 'Eduverse mang trải nghiệm lớp học ảo đến học sinh, giảng viên K12. Học sinh và giáo viên tương tác với nhau qua các hoạt động học và chơi trên ABC World. Giảng viên xây dựng các lớp học ảo với các mô hình mô phỏng cho các bài học, môn học.',
+        image: 'https://res.cloudinary.com/dz5pvwzm5/image/upload/v1657987062/UNIHACK/uk7v4ddnpmuqroixuwwh.jpg',
+        imageInfo: 'https://res.cloudinary.com/dz5pvwzm5/image/upload/v1657993757/UNIHACK/u7u9sbxtniuasihib9m2.png',
+        imageInfoMobile: 'https://res.cloudinary.com/dz5pvwzm5/image/upload/v1657989729/UNIHACK/c7iym1ie9mfb2igg2mlm.png'
       },
       {
         id: 4,
-        name: 'Where can I get some?',
-        desc: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there is not anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.',
-        image: 'https://picsum.photos/id/432/320/240'
+        name: 'Mindev Studio',
+        desc: 'Là một Ứng dụng AI đưa ra đánh giá phù hợp về năng lực của học sinh từ đó định hướng nghề nghiệp, giảm áp lực của học sinh để ôn luyện đúng với trình độ và nguyện vọng mong muốn, tạo một cộng đồng học tập thân thiện cho học sinh',
+        image: 'https://res.cloudinary.com/dz5pvwzm5/image/upload/v1657987062/UNIHACK/d3cxbg1fl04hmbwca1tt.jpg',
+        imageInfo: 'https://res.cloudinary.com/dz5pvwzm5/image/upload/v1657992573/UNIHACK/uzjrpofjzmliyfif6xlt.png',
+        imageInfoMobile: 'https://res.cloudinary.com/dz5pvwzm5/image/upload/v1657989729/UNIHACK/c7iym1ie9mfb2igg2mlm.png'
       },
       {
         id: 5,
-        name: 'Why do we use it?',
-        desc: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).',
-        image: 'https://picsum.photos/id/289/320/240'
+        name: 'The Heirs',
+        desc: 'Là một nền tảng Web app số hóa những mô hình 3D và cho phép người dùng tương tác với những mô hình 3D đó.',
+        image: 'https://res.cloudinary.com/dz5pvwzm5/image/upload/v1657987061/UNIHACK/fgs0rbfigur5spfh6dqz.jpg',
+        imageInfo: 'https://res.cloudinary.com/dz5pvwzm5/image/upload/v1657991562/UNIHACK/bygpya0ymc0cifvha2ac.png',
+        imageInfoMobile: 'https://res.cloudinary.com/dz5pvwzm5/image/upload/v1657989729/UNIHACK/c7iym1ie9mfb2igg2mlm.png'
       },
       {
         id: 6,
-        name: 'Where does it come from?',
-        desc: 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.',
-        image: 'https://picsum.photos/id/664/320/240'
+        name: 'Gì cũng được',
+        desc: 'Dự án xây dựng phần mềm giúp mọi người có nhu cầu học tập, làm việc có thể tìm đến nhau, tại một vị trí cụ thể nào đó ngồi lại với nhau và cùng nhau trao đổi về vấn đề của mình.',
+        image: 'https://res.cloudinary.com/dz5pvwzm5/image/upload/v1657987060/UNIHACK/ko7kiszzeckkadylx8z7.jpg',
+        imageInfo: 'https://res.cloudinary.com/dz5pvwzm5/image/upload/v1657991561/UNIHACK/vs3uaop3zrxb78iuqbis.png',
+        imageInfoMobile: 'https://res.cloudinary.com/dz5pvwzm5/image/upload/v1657989729/UNIHACK/c7iym1ie9mfb2igg2mlm.png'
+      },
+      {
+        id: 7,
+        name: 'Enouva',
+        desc: 'Nền tảng hỗ trợ phụ huynh đánh giá, đề xuất giải pháp và cách thức giáo dục trẻ gặp vấn đề chậm nói, chậm phát triển và tự kỷ.',
+        image: 'https://res.cloudinary.com/dz5pvwzm5/image/upload/v1657987060/UNIHACK/iitvljjv7pofmwdfjscn.jpg',
+        imageInfo: 'https://res.cloudinary.com/dz5pvwzm5/image/upload/v1657991560/UNIHACK/deybieoej2zvx17cypcw.png',
+        imageInfoMobile: 'https://res.cloudinary.com/dz5pvwzm5/image/upload/v1657989729/UNIHACK/c7iym1ie9mfb2igg2mlm.png'
+      },
+      {
+        id: 8,
+        name: 'WIN2WIN',
+        desc: 'Ứng dụng quản lý chất lượng dạy học thông qua việc sử dụng AI để ghi nhận cử chỉ của học viên.',
+        image: 'https://res.cloudinary.com/dz5pvwzm5/image/upload/v1657987060/UNIHACK/kz3t3zn2ogfwkj9jaxtb.jpg',
+        imageInfo: 'https://res.cloudinary.com/dz5pvwzm5/image/upload/v1657991562/UNIHACK/dno1a6edpindovwl3htt.png',
+        imageInfoMobile: 'https://res.cloudinary.com/dz5pvwzm5/image/upload/v1657989729/UNIHACK/c7iym1ie9mfb2igg2mlm.png'
+      },
+      {
+        id: 9,
+        name: 'Lazinators',
+        desc: 'Ứng dụng học theo nhu cầu Learn on Demand (LonDe). Sử dụng AI để tạo một lộ trình học dựa trên mong muốn của người học. Người dùng chỉ cần trả chi phí cho những gì đã học.',
+        image: 'https://res.cloudinary.com/dz5pvwzm5/image/upload/v1657987060/UNIHACK/epevdojepucdyrov2yyy.jpg',
+        imageInfo: 'https://res.cloudinary.com/dz5pvwzm5/image/upload/v1657991564/UNIHACK/tt0vxcfm3sc38og7ukkg.png',
+        imageInfoMobile: 'https://res.cloudinary.com/dz5pvwzm5/image/upload/v1657989729/UNIHACK/c7iym1ie9mfb2igg2mlm.png'
+
+      },
+      {
+        id: 10,
+        name: 'Smart-E',
+        desc: 'Tạo ra một mô hình học tập hoàn toàn mới trong một thế giới 3D, giúp cho người dùng có thể chủ động hơn trong việc học tập, tự lập và sáng tạo hơn. Tích lũy được nhiều kiến thức cả về chuyên môn và kiến thức xã hội. Kết hợp nhuần nhuyễn giữa Học và Chơi.',
+        image: 'https://res.cloudinary.com/dz5pvwzm5/image/upload/v1657987060/UNIHACK/loyqow8qcqin4dbhwl4o.jpg',
+        imageInfo: 'https://res.cloudinary.com/dz5pvwzm5/image/upload/v1657996255/UNIHACK/yx2xazvbhqyn11it1wrf.png',
+        imageInfoMobile: 'https://res.cloudinary.com/dz5pvwzm5/image/upload/v1657989729/UNIHACK/c7iym1ie9mfb2igg2mlm.png'
       }
     ],
     votedTeamId: null,

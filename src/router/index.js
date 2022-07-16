@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Auth from '../views/Auth.vue'
 import Vote from '../views/Vote.vue'
 import Result from '../views/Result.vue'
+import Winner from '../views/Winner.vue'
 import unAuth from '../middleware/unAuth'
 import auth from '../middleware/auth'
 
@@ -29,6 +30,11 @@ const routes = [
     path: '/k3t-qu4-bjnk-ck0n-d0j-tkj-unjk4ck-qdsc-dut',
     name: 'Result',
     component: Result
+  },
+  {
+    path: '/winner',
+    name: 'Winner',
+    component: Winner
   },
   {
     path: '/',

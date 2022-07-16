@@ -1,16 +1,18 @@
 <template>
-  <div class="flex flex-col 2xl:flex-row items-center gap-4 rounded-4xl md:p-8">
-    <div class="background_dark flex flex-col items-center rounded-4xl p-2 md:p-4 gap-4 md:gap-8">
-      <img
-        :src="card.image"
-        class="min-w-40 sm:min-w-60 md:min-w-80 lg:min-w-100 rounded-4xl object-cover"
-      />
-      <div class="team_name sm:text-xl md:text-2xl lg:text-3xl text-stroke-sm">{{ card.name }}</div>
+  <div class="flex flex-col 2xl:flex-row items-center gap-4 rounded-4xl">
+    <div class="background_dark flex flex-col items-center rounded-4xl">
+      <div v-if="!isMobile()">
+        <img
+          :src="card.imageInfo"
+        />
+      </div>
+      <div v-else>
+        <img
+          :src="card.imageInfoMobile"
+        />
+      </div>
     </div>
     <div class="flex flex-col justify-center items-center 2xl:items-start gap-4 p-3">
-      <div class="desc">
-        {{ card.desc }}
-      </div>
       <div v-if="votedTeamId && votedTeamId === card.id" class="button_voted h-15 w-max flex items-center gap-4 rounded-2xl object-cover px-8">
         <i class="fa-solid fa-heart"></i>
         <span>Voted</span>
@@ -52,6 +54,13 @@ export default {
           message: 'Vote canceled'
         })
       })
+    },
+    isMobile() {
+      if (screen.width <= 760) {
+        return true
+      } else {
+        return false
+      }
     }
   }
 }
