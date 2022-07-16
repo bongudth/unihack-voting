@@ -47,7 +47,12 @@ const authStore = {
           commit('setToken', token)
           localStorage.setItem('token', token)
           localStorage.setItem('user', JSON.stringify(user))
-          router.push({ name: 'Vote' })
+          const path = router?.currentRoute?.fullPath
+          if (path !== '/') {
+            router.push({ name: 'Team', params: { teamId: path?.split('%2F').pop() } })
+          } else {
+            router.push({ name: 'Vote' })
+          }
         })
         .catch(error => {
           console.log(error)
