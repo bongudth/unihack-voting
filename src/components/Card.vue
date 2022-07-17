@@ -98,6 +98,7 @@ export default {
         cancelButtonText: 'Cancel'
       }).then(() => {
         this.$emit('vote', this.card.id)
+        this.$store.dispatch('getResult')
         launchConfetti()
       }).catch(() => {
         this.$message({
