@@ -7,23 +7,25 @@
         class="h-50 min-w-50 md:h-70 md:min-w-70 rounded-4xl object-cover cursor-pointer"
       />
     </div>
-    <div class="flex flex-col justify-center items-center md:items-start gap-4 p-3">
-      <div @click="openModal" class="text-3xl lg:text-4xl text-stroke-sm cursor-pointer">{{ card.name }}</div>
-      <div @click="openModal" class="desc cursor-pointer">
-        {{ desc }}
+    <div class="md:h-70 flex flex-col justify-between items-between md:items-start gap-4 p-3">
+      <div class="flex flex-col gap-4">
+        <div @click="openModal" class="text-3xl lg:text-4xl text-stroke-sm cursor-pointer">{{ card.name }}</div>
+        <div @click="openModal" class="desc cursor-pointer">
+          {{ desc }}
+        </div>
       </div>
-      <div v-if="votedTeamId && votedTeamId === card.id" class="button_voted h-15 w-max flex items-center gap-4 rounded-2xl object-cover px-8">
-        <i class="fa-solid fa-heart"></i>
-        <span>Voted</span>
-      </div>
-      <div v-if="!votedTeamId" class="background_dark border-1 md:border-0 rounded-2xl p-0.5">
-        <button @click="confirmVote" class="button_vote h-15 w-max flex items-center gap-4 rounded-2xl object-cover px-8">
-          <i class="fa-regular fa-heart"></i>
-          <span>Up vote</span>
-        </button>
-      </div>
-      <div class="text-right w-full">
-        <span class="italic text-sm">Tổng số lượt bình chọn : <span class="font-bold">{{teamCount}}</span></span>
+      <div class="w-full flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0">
+        <div v-if="votedTeamId && votedTeamId === card.id" class="button_voted h-15 w-max flex items-center gap-4 rounded-2xl object-cover px-8">
+          <i class="fa-solid fa-heart"></i>
+          <span>Đã bình chọn</span>
+        </div>
+        <div v-if="!votedTeamId" class="background_dark border-1 md:border-0 rounded-2xl p-0.5">
+          <button @click="confirmVote" class="button_vote h-15 w-max flex items-center gap-4 rounded-2xl object-cover px-8">
+            <i class="fa-regular fa-heart"></i>
+            <span>Bình chọn</span>
+          </button>
+        </div>
+        <span class="italic text-sm">Tổng số lượt bình chọn: <span class="font-bold">{{teamCount}}</span></span>
       </div>
     </div>
   </div>

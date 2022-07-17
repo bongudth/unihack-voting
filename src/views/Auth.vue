@@ -3,7 +3,7 @@
     <img src="../assets/unihack_logo.png" class="h-24 object-contain" />
     <button @click="googleSignIn" class="auth_button w-auto flex items-center justify-center gap-4 border-1 rounded-4xl p-2">
       <img src="../assets/google-logo.png" class="h-10 object-contain" />
-      <span class="font-bold">Sign in with Google</span>
+      <span class="font-bold">Đăng nhập với Google</span>
     </button>
   </div>
 </template>

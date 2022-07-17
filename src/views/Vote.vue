@@ -9,7 +9,7 @@
         <div @click="googleSignOut" class="gradient_border rounded-2xl p-0.5">
           <button class="button_sign_out h-15 w-max flex items-center gap-4 rounded-2xl object-cover px-8">
             <i class="fa-solid fa-arrow-right-from-bracket"></i>
-            <span class="hidden md:block">Sign out</span>
+            <span class="hidden md:block">Đăng xuất</span>
           </button>
         </div>
       </div>
