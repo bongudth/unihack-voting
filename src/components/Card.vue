@@ -4,7 +4,7 @@
       <img
         @click="openModal"
         :src="card.image"
-        class="h-40 min-w-60 md:h-60 md:min-w-80 rounded-4xl object-cover cursor-pointer"
+        class="h-50 min-w-50 md:h-70 md:min-w-70 rounded-4xl object-cover cursor-pointer"
       />
     </div>
     <div class="flex flex-col justify-center items-center md:items-start gap-4 p-3">
@@ -21,6 +21,9 @@
           <i class="fa-regular fa-heart"></i>
           <span>Up vote</span>
         </button>
+      </div>
+      <div class="text-right w-full">
+        <span class="italic text-sm">Tổng số lượt bình chọn : <span class="font-bold">{{teamCount}}</span></span>
       </div>
     </div>
   </div>
@@ -44,6 +47,11 @@ export default {
     } else {
       await this.$store.dispatch('getVote')
     }
+    if (this.$store.state.result) {
+      this.result = this.$store.state.result
+    } else {
+      await this.$store.dispatch('getResult')
+    }
   },
   computed: {
     votedTeamId() {
@@ -54,6 +62,21 @@ export default {
         return this.card.desc.substring(0, 200) + '...'
       } else {
         return this.card.desc
+      }
+    },
+    result() {
+      return this.$store.state.result
+    },
+    teamCount() {
+      if (this.result) {
+        return this.result?.map(item => {
+          return {
+            teamId: item.teamId,
+            count: item.count
+          }
+        })?.find(item => item.teamId === String(this.card.id))?.count || 0
+      } else {
+        return 0
       }
     }
   },
